@@ -1,0 +1,94 @@
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: blanchedalmond;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px ;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 15px;
+
+    font-size: 1.1em;
+}
+
+.grid{
+    display: grid;
+    width: 100% ;
+    max-width: 800px;
+    grid-template-columns:repeat(5, 1fr) ;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+
+.card{
+    cursor: pointer;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 15px;
+    position: relative;
+    transition: all 950ms ease;
+    transform-style: preserve-3d;
+    
+  
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;  /* ALINHANDO A IMAGEM COMPLETA NA CARTA */
+    background-position: center;
+    box-shadow: 2px 2px 2px 2px #33333359;
+    transition: all 400ms ease;
+}
+
+.front{
+    
+                                        /* imagem de FRENTE da carta */
+    border-radius: 10px;
+    transform: rotateY(180deg);
+}
+
+.back{
+   background-image: url('/image-game/back.png'); /* imagem de TRAS da carta */
+   border-radius: 10px;
+   backface-visibility: hidden;
+}
+
+
+
+
+
+.reveal-card{
+    transform: rotateY(180deg);
+}
+
+.disabled-card{
+    filter: saturate(0);
+    opacity: 0.5;
+    cursor: auto;
+}
+
+
+
+
+@media (min-width: 800px) {
+    .body{
+        max-width: 700px;
+    }
+}
